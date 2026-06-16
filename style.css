@@ -1,0 +1,184 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #4a3b32; 
+    line-height: 1.8; 
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 35px 20px 25px 20px;
+}
+.logo {
+    max-width: 110px;
+    margin-bottom: 25px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 35px; 
+}
+nav a {
+    text-decoration: none;
+    color: #6d5c52;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em; 
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+nav a:hover {
+    color: #e88b88; 
+    border-bottom: 2px solid #e88b88;
+}
+
+main {
+    width: 100%;
+    margin: 0 auto; 
+    padding: 80px 20px; 
+    min-height: 55vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+   
+    background: linear-gradient(135deg, #fdf6f0 0%, #f7eae1 100%); 
+}
+
+
+main h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #3d2f26;
+    margin-bottom: 25px;
+    letter-spacing: -0.02em; 
+}
+main p {
+    font-size: 1.15rem;
+    color: #6d5c52;
+    max-width: 620px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+/* Category Headers like "Cupcakes" & "Wedding Cakes" */
+.category-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #5c4d43;
+    text-transform: uppercase;
+    letter-spacing: 0.1em; 
+    margin: 50px 0 30px 0;
+    text-align: center;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+/* Elegant line accent accent under the category title */
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: #e88b88; 
+}
+
+/* Column grid for product cards */
+.product-grid {
+    display: grid;
+    width: 100%;
+    max-width: 1100px; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px; 
+    margin-bottom: 40px;
+    padding: 10px 0;
+}
+
+/* Product Cards with Hover Micro-interactions */
+.product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(74, 59, 50, 0.04); 
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 0.3s ease;
+}
+
+/* Lifts cards up cleanly when the consumer's mouse hovers over it */
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(74, 59, 50, 0.09);
+}
+
+/* Product Menu Images - perfectly scaled */
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover; 
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Product Menu Titles */
+.product-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #3d2f26;
+    margin-bottom: 6px;
+}
+
+/* Product Menu Prices */
+.product-card p {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #e88b88; 
+}
+footer {
+    background-color: #2b2521; 
+    color: #fff;
+    text-align: center;
+    padding: 45px 20px;
+    margin-top: 0; 
+}
+.footer-links {
+    margin-bottom: 15px;
+}
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 12px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.footer-links a:hover {
+    opacity: 1;
+    color: #e88b88;
+}
+.footer-email {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+.footer-email a {
+    color: #e88b88;
+    text-decoration: none;
+}
+.footer-email a:hover {
+    text-decoration: underline;
+}
