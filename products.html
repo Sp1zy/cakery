@@ -15,6 +15,10 @@
             <a href="about.html">About</a>
             <a href="products.html">Products</a>
             <a href="contact.html">Contact</a>
+            <!-- Added the Shopping Bag Link into the header so users can open it -->
+            <a href="#" class="cart-nav-link">
+                🛒 Bag (<span class="cart-badge">0</span>)
+            </a>
         </nav>
     </header>
 
@@ -23,104 +27,227 @@
 
         <h2 class="category-title">Cupcakes</h2>
         <div class="product-grid">
+            
             <div class="product-card">
-                <img src="cupcake8.jpeg" alt="Classic vanilla cupcake with white frosting and sprinkles in a bright bakery setting">
-                <h3>Classic Vanilla</h3>
-                <p>$3.50</p>
+                <img src="cupcakes/cupcake8.jpeg" alt="Classic Vanilla">
+                <div class="product-card-content">
+                    <h3>Classic Vanilla</h3>
+                    <div class="product-meta">
+                        <span class="price">$3.50</span>
+                        <button class="add-to-cart-btn" data-id="classic-vanilla" data-name="Classic Vanilla" data-price="3.50">Add to Cart</button>
+                    </div>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="cupcake7.jpeg" alt="Chocolate cupcake with rich chocolate frosting on a light background">
-                <h3>Sprinkled Delight</h3>
-                <p>$3.50</p>
-            </div>
-            <div class="product-card">
-                <img src="cupcake1.jpeg" alt="cupcake1">
-                <h3>Salted Caramel</h3>
-                <p>$4.00</p>
-            </div>
-            <div class="product-card">
-                <img src="cupcake2.jpeg" alt="cupcake2">
-                <h3>Red Clouds</h3>
-                <p>$4.00</p>
-            </div>
-            <div class="product-card">
-                <img src="cupcake3.jpeg" alt="cupcake3">
 
-                <h3>Candy Dream</h3>
-                <p>$4.50</p>
-            </div>
             <div class="product-card">
-                <img src="cupcake4.jpeg" alt="cupcake4">
-                <h3>Raspberry Ripple</h3>
-                <p>$3.75</p>
+                <img src="cupcakes/cupcake7.jpeg" alt="Sprinkled Delight">
+                <div class="product-card-content">
+                    <h3>Sprinkled Delight</h3>
+                    <div class="product-meta">
+                        <span class="price">$3.50</span>
+                        <button class="add-to-cart-btn" data-id="sprinkled-delight" data-name="Sprinkled Delight" data-price="3.50">Add to Cart</button>
+                    </div>
+                </div>
             </div>
+
             <div class="product-card">
-                <img src="cupcake5.jpeg" alt="cupcake5">
-                <h3>Chocolate Delight</h3>
-                <p>$4.50</p>
+                <img src="cupcakes/cupcake1.jpeg" alt="Salted Caramel">
+                <div class="product-card-content">
+                    <h3>Salted Caramel</h3>
+                    <div class="product-meta">
+                        <span class="price">$4.00</span>
+                        <button class="add-to-cart-btn" data-id="salted-caramel" data-name="Salted Caramel" data-price="4.00">Add to Cart</button>
+                    </div>
+                </div>
             </div>
+
             <div class="product-card">
-                <img src="cupcake9.jpeg" alt="cupcake9">
-                <h3>Red Velvet</h3>
-                <p>$4.00</p>
+                <img src="cupcakes/cupcake2.jpeg" alt="Red Clouds">
+                <div class="product-card-content">
+                    <h3>Red Clouds</h3>
+                    <div class="product-meta">
+                        <span class="price">$4.00</span>
+                        <button class="add-to-cart-btn" data-id="red-clouds" data-name="Red Clouds" data-price="4.00">Add to Cart</button>
+                    </div>
+                </div>
             </div>
+
+            <div class="product-card">
+                <img src="cupcakes/cupcake3.jpeg" alt="Candy Dream">
+                <div class="product-card-content">
+                    <h3>Candy Dream</h3>
+                    <div class="product-meta">
+                        <span class="price">$4.50</span>
+                        <button class="add-to-cart-btn" data-id="candy-dream" data-name="Candy Dream" data-price="4.50">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="cupcakes/cupcake4.jpeg" alt="Raspberry Ripple">
+                <div class="product-card-content">
+                    <h3>Raspberry Ripple</h3>
+                    <div class="product-meta">
+                        <span class="price">$3.75</span>
+                        <button class="add-to-cart-btn" data-id="raspberry-ripple" data-name="Raspberry Ripple" data-price="3.75">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="cupcakes/cupcake5.jpeg" alt="Chocolate Delight">
+                <div class="product-card-content">
+                    <h3>Chocolate Delight</h3>
+                    <div class="product-meta">
+                        <span class="price">$4.50</span>
+                        <button class="add-to-cart-btn" data-id="chocolate-delight" data-name="Chocolate Delight" data-price="4.50">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="cupcakes/cupcake9.jpeg" alt="Red Velvet">
+                <div class="product-card-content">
+                    <h3>Red Velvet</h3>
+                    <div class="product-meta">
+                        <span class="price">$4.00</span>
+                        <button class="add-to-cart-btn" data-id="red-velvet" data-name="Red Velvet" data-price="4.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <h2 class="category-title">Wedding Cakes</h2>
         <div class="product-grid">
+            
             <div class="product-card">
-                <img src="wedding1.jpeg" alt="wedding1">
-                <h3>Elegant White</h3>
-                <p>$150.00</p>
+                <img src="weddingcakes/wedding1.jpeg" alt="Elegant White">
+                <div class="product-card-content">
+                    <h3>Elegant White</h3>
+                    <div class="product-meta">
+                        <span class="price">$150.00</span>
+                        <button class="add-to-cart-btn" data-id="elegant-white" data-name="Elegant White" data-price="150.00">Add to Cart</button>
+                    </div>
+                </div>
             </div>
-            <div class="product-card">
-                <img src="wedding2.jpeg" alt="wedding2">
-                <h3>Floral Cascade</h3>
-                <p>$180.00</p>
-            </div>
-            <div class="product-card">
-                <img src="wedding3.jpeg" alt="wedding3">
-                <h3>Rustic Naked Cake</h3>
-                <p>$135.00</p>
-            </div>
-            <div class="product-card">
-                <img src="wedding4.jpeg" alt="wedding4">
-                <h3>Modern Geometric</h3>
-                <p>$210.00</p>
-            </div>
-            <div class="product-card">
-                <img src="wedding5.jpeg" alt="wedding5">
 
-                <h3>Golden Glamour</h3>
-                <p>$250.00</p>
-            </div>
             <div class="product-card">
-                <img src="wedding6.jpeg" alt="wedding6">
-                <h3>Vintage Lace</h3>
-                <p>$195.00</p>
+                <img src="weddingcakes/wedding2.jpeg" alt="Floral Cascade">
+                <div class="product-card-content">
+                    <h3>Floral Cascade</h3>
+                    <div class="product-meta">
+                        <span class="price">$180.00</span>
+                        <button class="add-to-cart-btn" data-id="floral-cascade" data-name="Floral Cascade" data-price="180.00">Add to Cart</button>
+                    </div>
+                </div>
             </div>
+
             <div class="product-card">
-                <img src="wedding7.jpeg" alt="wedding7">
-                <h3>Crimson Luxury</h3>
-                <p>$220.00</p>
+                <img src="weddingcakes/wedding3.jpeg" alt="Rustic Naked Cake">
+                <div class="product-card-content">
+                    <h3>Rustic Naked Cake</h3>
+                    <div class="product-meta">
+                        <span class="price">$135.00</span>
+                        <button class="add-to-cart-btn" data-id="rustic-naked" data-name="Rustic Naked Cake" data-price="135.00">Add to Cart</button>
+                    </div>
+                </div>
             </div>
+
             <div class="product-card">
-                <img src="wedding8.jpeg" alt="wedding8">
-                <h3>Minimalist Chic</h3>
-                <p>$140.00</p>
+                <img src="weddingcakes/wedding4.jpeg" alt="Modern Geometric">
+                <div class="product-card-content">
+                    <h3>Modern Geometric</h3>
+                    <div class="product-meta">
+                        <span class="price">$210.00</span>
+                        <button class="add-to-cart-btn" data-id="modern-geometric" data-name="Modern Geometric" data-price="210.00">Add to Cart</button>
+                    </div>
+                </div>
             </div>
+
+            <div class="product-card">
+                <img src="weddingcakes/wedding5.jpeg" alt="Golden Glamour">
+                <div class="product-card-content">
+                    <h3>Golden Glamour</h3>
+                    <div class="product-meta">
+                        <span class="price">$250.00</span>
+                        <button class="add-to-cart-btn" data-id="golden-glamour" data-name="Golden Glamour" data-price="250.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="weddingcakes/wedding6.jpeg" alt="Vintage Lace">
+                <div class="product-card-content">
+                    <h3>Vintage Lace</h3>
+                    <div class="product-meta">
+                        <span class="price">$195.00</span>
+                        <button class="add-to-cart-btn" data-id="vintage-lace" data-name="Vintage Lace" data-price="195.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="weddingcakes/wedding7.jpeg" alt="Crimson Luxury">
+                <div class="product-card-content">
+                    <h3>Crimson Luxury</h3>
+                    <div class="product-meta">
+                        <span class="price">$220.00</span>
+                        <button class="add-to-cart-btn" data-id="crimson-luxury" data-name="Crimson Luxury" data-price="220.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="weddingcakes/wedding8.jpeg" alt="Minimalist Chic">
+                <div class="product-card-content">
+                    <h3>Minimalist Chic</h3>
+                    <div class="product-meta">
+                        <span class="price">$140.00</span>
+                        <button class="add-to-cart-btn" data-id="minimalist-chic" data-name="Minimalist Chic" data-price="140.00">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
     <footer>
         <div class="footer-links">
-            <a href="https://www.instagram.com/munamii.cakery/" target="_blank">Instagram</a> | 
-            <a href="https://www.facebook.com/p/munamiicakery-100068077487468/" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a> | 
+            <a href="https://facebook.com" target="_blank">Facebook</a>
         </div>
         <div class="footer-email">
             Contact us via email: <a href="mailto:info@munamiicakery.com">info@munamiicakery.com</a>
         </div>
     </footer>
+
+    <!-- ======================================================= -->
+    <!-- Slide-out Cart Panel Drawer Layout Container            -->
+    <!-- ======================================================= -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Shopping Bag</h2>
+            <button id="close-cart" class="close-cart-btn">&times;</button>
+        </div>
+        
+        <div id="cart-items-container" class="cart-items-container">
+            <p class="empty-message">Your cart is empty.</p>
+        </div>
+        
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Order</button>
+        </div>
+    </div>
+
+    <!-- Dark layout overlay behind the drawer container -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <script src="cart.js"></script>
 
 </body>
 </html>
