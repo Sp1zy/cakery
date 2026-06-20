@@ -86,7 +86,7 @@ main p {
     padding-bottom: 12px;
 }
 
-/* Elegant line accent accent under the category title */
+/* line accent accent under the category title */
 .category-title::after {
     content: '';
     position: absolute;
@@ -126,7 +126,7 @@ main p {
     box-shadow: 0 12px 24px rgba(74, 59, 50, 0.09);
 }
 
-/* Product Menu Images - perfectly scaled */
+/* Product Menu Images */
 .product-card img {
     width: 100%;
     height: 220px;
@@ -181,4 +181,337 @@ footer {
 }
 .footer-email a:hover {
     text-decoration: underline;
+}
+
+/* ==========================================================================
+   Munamii Cakery Premium Cart Integration Design System
+   ========================================================================== */
+
+/* The Main Slide-out Panel Theme overrides */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -450px; /* Hidden offscreen */
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+    background-color: #fdfaf7; /* Matches warm bakery soft-cream backdrop */
+    box-shadow: -8px 0 35px rgba(92, 64, 51, 0.15); /* Soft chocolate drop shadow */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cart-drawer.open {
+    right: 0;
+}
+
+/* Header Panel Design inside Cart */
+.cart-header {
+    padding: 24px;
+    border-bottom: 1px solid #ebdcd0; /* Elegant light-brown divider line */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.cart-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #3e2723; /* Dark gourmet chocolate */
+    margin: 0;
+}
+
+.close-cart-btn {
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: #8b5a2b; /* Premium brown close marker */
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.close-cart-btn:hover {
+    color: #3e2723;
+}
+
+/* Individual Product Rows inside Cart */
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: #ffffff; /* Creates distinct cards for items in the bag */
+    border-radius: 12px;
+    border: 1px solid #ebdcd0;
+    box-shadow: 0 2px 6px rgba(92, 64, 51, 0.03);
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cart-item-info strong {
+    font-size: 1rem;
+    color: #3e2723;
+}
+
+.cart-item-single-price {
+    font-size: 0.85rem;
+    color: #8b5a2b; /* Warm milk chocolate subtitled text */
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Premium Plus/Minus Stepper Controls Styling */
+.quantity-stepper {
+    display: flex;
+    align-items: center;
+    background-color: #fdfaf7;
+    border: 1px solid #ebdcd0;
+    border-radius: 20px; /* Rounded pill style buttons */
+    overflow: hidden;
+    padding: 2px;
+}
+
+.stepper-btn {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #8b5a2b;
+    transition: all 0.2s ease;
+    border-radius: 50%;
+}
+
+.stepper-btn:hover {
+    background-color: #8b5a2b;
+    color: #ffffff;
+}
+
+.stepper-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    min-width: 24px;
+    text-align: center;
+    color: #3e2723;
+}
+
+.cart-item-total-price {
+    font-weight: 700;
+    color: #3e2723;
+    font-size: 1rem;
+    min-width: 65px;
+    text-align: right;
+}
+
+/* Trash Bin Reset */
+.delete-item-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 4px;
+    transition: transform 0.2s ease;
+}
+
+.delete-item-btn:hover {
+    transform: scale(1.15);
+}
+
+/* Footer & Calculations Panel Tweak */
+.cart-footer {
+    padding: 24px;
+    border-top: 1px solid #ebdcd0;
+    background-color: #ffffff;
+}
+
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #3e2723;
+}
+
+#cart-total-price {
+    color: #8b5a2b; /* Pricing highlight indicator */
+}
+
+/* Custom Backdrop Overlay Adjustment */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(62, 39, 35, 0.3); /* Soft warm translucent drop shadow barrier */
+    backdrop-filter: blur(5px); /* Soft focus background blur */
+    z-index: 999;
+    display: none;
+}
+
+.cart-overlay.open {
+    display: block;
+}
+/* ==========================================================================
+   Munamii Cakery Premium Brown E-Commerce Styles
+   ========================================================================== */
+
+/* 1. Header Navigation Bag Tweak */
+.cart-nav-link {
+    text-decoration: none;
+    color: #5c4033 !important; /* Deep warm brown text */
+    font-weight: 600;
+    margin-left: 20px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background-color: #fcf8f5; /* Ultra light cream background */
+    border: 1px solid #e8d8ce;
+    transition: all 0.2s ease;
+}
+.cart-nav-link:hover {
+    background-color: #5c4033;
+    color: #ffffff !important;
+}
+
+/* 2. Product Card Meta Layout Fixes */
+.product-card-content {
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.product-card-content h3 {
+    font-size: 1.15rem;
+    color: #3e2723; /* Very dark chocolate brown for headings */
+    margin: 0;
+}
+.product-meta {
+    display: flex;
+    justify-content: flex-start; /* Aligns both items to the left side together */
+    align-items: center;
+    gap: 20px;                   /* Controls the exact distance between price and button */
+    margin-top: 10px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #5c4033; /* Warm brown for prices */
+}
+
+/* 3. The New Beautiful Brown Add to Cart Button */
+.add-to-cart-btn {
+    background-color: #8b5a2b; /* Premium Milk Chocolate Brown */
+    color: #ffffff;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 5px 4px rgba(139, 90, 43, 0.15);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Button Hover State - Deepens to dark chocolate and lifts slightly */
+.add-to-cart-btn:hover {
+    background-color: #5c4033; /* Dark Roasted Chocolate Brown */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(92, 64, 51, 0.25);
+}
+
+/* Button Active State - When clicked physically */
+.add-to-cart-btn:active {
+    transform: translateY(1px);
+}
+
+/* 4. Cart Drawer Checkout Button Theme Sync */
+.checkout-btn {
+    width: 100%;
+    background-color: #8b5a2b;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.checkout-btn:hover {
+    background-color: #5c4033;
+}
+
+/* Styling for the typed field input inside your stepper */
+.stepper-input {
+    width: 38px;
+    background: transparent;
+    border: none;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #3e2723; /* Matching dark chocolate text */
+    font-family: inherit;
+    padding: 2px 0;
+}
+
+/* Removes default up/down arrows from input types inside the cart drawer */
+.stepper-input::-webkit-outer-spin-button,
+.stepper-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.stepper-input[type=number] {
+    -moz-appearance: textfield; /* Firefox support override */
+}
+
+/* When the user highlights or clicks into the box, give it a soft hint */
+.stepper-input:focus {
+    outline: none;
+    background-color: #f5eae1; /* Subtle highlight tone background */
+    border-radius: 4px;
+}
+
+header nav {
+    display: flex;
+    align-items: center; /* This forces perfect vertical centering for everything inside nav */
+    gap: 25px;           /* Controls the exact, even spacing between all links and the bag */
+}
+
+/* Update your existing .cart-nav-link block to make sure it plays nice with flexbox */
+.cart-nav-link {
+    text-decoration: none;
+    color: #5c4033 !important;
+    font-weight: 600;
+    /* Remove any large margin-left that might be pushing it away unequally */
+    margin-left: 5px; 
+    padding: 7.5px 25px;
+    border-radius: 20px;
+    background-color: #fcf8f5;
+    border: 1px solid #e8d8ce;
+    
+    /* Forces the cart emoji and text inside the button to align perfectly too */
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; 
+    
+    transition: all 0.2s ease;
 }
