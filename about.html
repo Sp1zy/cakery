@@ -3,33 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Munamii Cakery</title>
+    <title>About Our Story | Munamii Cakery</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <img src="images.jpeg" alt="Munamii Cakery Logo" class="logo">
+        <img src="images.jpeg" alt="Munamii Cakery logo" class="logo">
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="products.html">Products</a>
             <a href="contact.html">Contact</a>
+            <a href="builder.html">Cake Builder</a>
+            <a href="products.html" class="cart-nav-link">
+                🛒 Bag (<span class="cart-badge">0</span>)
+            </a>
         </nav>
     </header>
 
     <main>
-        <h1>Our Story</h1>
-        <div style="max-width: 700px; margin: 0 auto; text-align: justify;">
-            <p style="margin-bottom: 15px;">At Munamii Cakery, each cake, each box of cupcakes that we make has a very special value for us. We not only want to bring a dessert to your table but rather a unique experience for you, which will become an unforgettable memory.</p>
-            <p>We have been in the pastry market for more than 8 years and now we offer you a new way to shop through our website.</p>
-        </div>
+        <!-- ======================================================= -->
+        <!-- THE ABOUT PREVIEW STORY Overhaul                       -->
+        <!-- ======================================================= -->
+        <section class="about-story-container">
+            
+            <!-- Left Column: Elegant Storytelling Content & Timeline Details -->
+            <div class="about-story-left">
+                <span class="about-tagline">🎨 Behind the Counter</span>
+                <h1>Crafting Sweet Memories from the Heart of Sweden</h1>
+                <p class="about-lead-text">What started as a simple passion for blending local organic ingredients into home-baked treats has evolved into Sweden's premier boutique cakery design studio.</p>
+                
+                <p>At Munamii Cakery, we believe that a cake shouldn't just be a centerpiece; it should be an unforgettable sensory experience. Every layer is meticulously baked from scratch, every frosting wave is sculpted by hand, and every design is tailored explicitly to tell your personal celebratory story.</p>
+                
+                <!-- Micro-Timeline Component to showcase design/layout skill to clients -->
+                <div class="brand-milestones">
+                    <div class="milestone-item">
+                        <div class="milestone-dot"></div>
+                        <div class="milestone-info">
+                            <h4>Artisan Sourcing</h4>
+                            <p>We source only organic Madagascar vanilla, premium Belgian chocolates, and locally harvested Andalusian fruits.</p>
+                        </div>
+                    </div>
+                    <div class="milestone-item">
+                        <div class="milestone-dot"></div>
+                        <div class="milestone-info">
+                            <h4>Bespoke Excellence</h4>
+                            <p>Every single cake undergoes an absolute, custom architectural design review before leaving our kitchen doors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Visual Layout Mastery Overlap -->
+            <div class="about-story-right">
+                <div class="about-image-frame">
+                    <!-- High-quality baker/pastry placeholder image -->
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80" alt="Baking Artisan at work" class="main-about-img">
+                    
+                    <!-- Overlapping Signature Accent Component Block -->
+                    <div class="artisan-badge-card">
+                        <h5>Munamii Promise</h5>
+                        <p>100% Preservative Free & Handcrafted Daily</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </main>
 
     <footer>
         <div class="footer-links">
-            <a href="https://www.instagram.com/munamii.cakery/" target="_blank">Instagram</a> | 
-            <a href="https://www.facebook.com/p/munamiicakery-100068077487468/  " target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a> | 
+            <a href="https://facebook.com" target="_blank">Facebook</a>
         </div>
         <div class="footer-email">
             Contact us via email: <a href="mailto:info@munamiicakery.com">info@munamiicakery.com</a>
