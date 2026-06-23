@@ -3,32 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Munamii Cakery | Home</title>
+    <title>Munamii Cakery | Artisan Cakes & Cupcakes</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <img src="images.jpeg" alt="Munamii Cakery Logo" class="logo">
+        <img src="images.jpeg" alt="Munamii Cakery logo" class="logo">
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="products.html">Products</a>
             <a href="contact.html">Contact</a>
+            <a href="builder.html">Cake Builder</a>
+            <a href="products.html" class="cart-nav-link">
+                🛒 Bag (<span class="cart-badge">0</span>)
+            </a>
         </nav>
     </header>
 
     <main>
-        <h1>Welcome to Munamii Cakery!</h1>
-        <p style="text-align: center; max-width: 600px; margin: 0 auto;">
-            Hi! Welcome to Munamii Cakery! We offer you the most delicious cakes and cupcakes for all kinds of events and celebrations. Browse around to discover what you would like to buy.
-        </p>
+        <section class="hero-split-container">
+            
+            <div class="hero-left-content">
+                <span class="hero-tagline">✨ Premium Boutique Bakery</span>
+                <h1>Bespoke Pastries Handcrafted for Your Special Moments</h1>
+                <p>From luxurious multi-tier artisan wedding cakes to delicate gourmet daily cupcakes, we bring your sweet visions to life using finest organic ingredients.</p>
+                
+                <div class="hero-cta-buttons">
+                    <a href="products.html" class="hero-btn-primary">Explore Our Menu</a>
+                    <a href="builder.html" class="hero-btn-secondary">Order Custom Design</a>
+                </div>
+            </div>
+            
+            <div class="hero-right-visual">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=800&q=80" alt="Artisan Luxury Cake" class="main-hero-img">
+                    
+                    <div class="floating-review-badge">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <p><strong>5.0 Rating</strong> (140+ Local Reviews)</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
     </main>
+
+<!-- ======================================================= -->
+<!-- PREMIUM INTERACTIVE TESTIMONIAL GRID                    -->
+<!-- ======================================================= -->
+<section class="testimonials-section">
+    <div class="testimonials-intro">
+        <span class="about-tagline">✨ Customer Love</span>
+        <h2>Sweet Stories from Our Community</h2>
+        <p>See why Sweden trusts Munamii Cakery to sweeten life's most unforgettable milestones.</p>
+        
+        <!-- Interactive JavaScript Filtering Controls -->
+        <div class="testimonial-filters">
+            <button class="filter-btn active" data-filter="all">Show All Stories</button>
+            <button class="filter-btn" data-filter="wedding">Wedding Cakes</button>
+            <button class="filter-btn" data-filter="celebration">Celebrations</button>
+            <button class="filter-btn" data-filter="cupcakes">Cupcakes & Treats</button>
+        </div>
+    </div>
+
+    <!-- The Social Proof Dynamic Card Grid Grid Layout -->
+    <div class="testimonials-grid" id="testimonials-grid-wrapper">
+        
+        <!-- Card 1 (Wedding) -->
+        <div class="testimonial-card" data-category="wedding">
+            <div class="testimonial-header">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="verified-badge">✓ Verified Client</span>
+            </div>
+            <p class="testimonial-quote">"The 3-Tier Grand Luxury cake Munamii designed for our wedding was an absolute masterpiece! Not only was it breathtakingly beautiful with the fresh floral cascade, but the Madagascar Vanilla & Raspberry layers were incredibly moist."</p>
+            <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Sophia R." class="author-avatar">
+                <div class="author-info">
+                    <h4>Sophia & Marcus R.</h4>
+                    <p>Custom Wedding Cake</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 (Cupcakes) -->
+        <div class="testimonial-card" data-category="cupcakes">
+            <div class="testimonial-header">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="verified-badge">✓ Verified Client</span>
+            </div>
+            <p class="testimonial-quote">"I order a batch of the Red Velvet and Salted Caramel cupcakes every single time I host a weekend dinner party. The frosting crisp-edges look like fine art and the creaminess is perfectly balanced, never overly sweet!"</p>
+            <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="David K." class="author-avatar">
+                <div class="author-info">
+                    <h4>David K.</h4>
+                    <p>Assorted Gourmet Cupcakes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 (Celebration) -->
+        <div class="testimonial-card" data-category="celebration">
+            <div class="testimonial-header">
+                <span class="stars">⭐⭐⭐⭐⭐</span>
+                <span class="verified-badge">✓ Verified Client</span>
+            </div>
+            <p class="testimonial-quote">"Our daughter’s 1st birthday cake was amazing! The Belgian Chocolate fudge sponge was decadent, and working with the design studio using the live builder tool made coordinating from afar completely stress-free."</p>
+            <div class="testimonial-author">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Elena P." class="author-avatar">
+                <div class="author-info">
+                    <h4>Elena P.</h4>
+                    <p>2-Tier Birthday Cake</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 
     <footer>
         <div class="footer-links">
-            <a href="https://www.instagram.com/munamii.cakery/" target="_blank">Instagram</a> | 
-            <a href="https://www.facebook.com/p/munamiicakery-100068077487468/  " target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a> | 
+            <a href="https://facebook.com" target="_blank">Facebook</a>
         </div>
         <div class="footer-email">
             Contact us via email: <a href="mailto:info@munamiicakery.com">info@munamiicakery.com</a>
