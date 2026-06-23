@@ -1,9 +1,12 @@
-
+/* ==========================================================================
+   Base Elements & Global Resets
+   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #4a3b32; 
@@ -11,20 +14,27 @@ body {
     background-color: #ffffff;
 }
 
+/* ==========================================================================
+   Header Navigation Layout
+   ========================================================================== */
 header {
     background-color: #ffffff;
     text-align: center;
     padding: 35px 20px 25px 20px;
 }
+
+header nav {
+    display: flex;
+    align-items: center; /* Forces perfect vertical centering inside nav */
+    justify-content: center;
+    gap: 25px;           /* Controls exact, even spacing between links */
+}
+
 .logo {
     max-width: 110px;
     margin-bottom: 25px;
 }
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 35px; 
-}
+
 nav a {
     text-decoration: none;
     color: #6d5c52;
@@ -36,44 +46,66 @@ nav a {
     transition: color 0.3s ease, border-color 0.3s ease;
     border-bottom: 2px solid transparent;
 }
+
 nav a:hover {
     color: #e88b88; 
     border-bottom: 2px solid #e88b88;
 }
 
+/* Premium Shopping Bag Link component */
+.cart-nav-link {
+    text-decoration: none;
+    color: #5c4033 !important;
+    font-weight: 600;
+    margin-left: 5px; 
+    padding: 7.5px 25px;
+    border-radius: 20px;
+    background-color: #fcf8f5;
+    border: 1px solid #e8d8ce;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; 
+    transition: all 0.2s ease;
+}
+
+.cart-nav-link:hover {
+    background-color: #5c4033;
+    color: #ffffff !important;
+}
+
+/* ==========================================================================
+   Core Section Containers & Standard Page Layout Fixes
+   ========================================================================== */
 main {
     width: 100%;
     margin: 0 auto; 
-    padding: 80px 20px; 
-    min-height: 55vh;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-   
-    background: linear-gradient(135deg, #fdf6f0 0%, #f7eae1 100%); 
+    min-height: 60vh;
+    padding: 40px 20px; /* Gives essential breathing room so elements don't slam into the header */
 }
 
-
-main h1 {
+/* This targets main top headings on standard pages like Products and Contact */
+main > h1:first-of-type {
     font-size: 2.6rem;
     font-weight: 700;
-    color: #3d2f26;
-    margin-bottom: 25px;
-    letter-spacing: -0.02em; 
-}
-main p {
-    font-size: 1.15rem;
-    color: #6d5c52;
-    max-width: 620px;
-    margin: 0 auto;
-    font-weight: 400;
+    color: #3e2723; /* Matching dark gourmet chocolate theme */
+    text-align: center; /* Beautifully centers the page title */
+    margin-top: 20px;
+    margin-bottom: 40px;
+    letter-spacing: -0.02em;
 }
 
-/* Category Headers like "Cupcakes" & "Wedding Cakes" */
+/* Centering helper for generic paragraphs on Products/Contact pages */
+main > p {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1rem;
+    color: #5c4033;
+}
+
+/* ==========================================================================
+   E-Commerce Products Page Elements
+   ========================================================================== */
 .category-title {
     font-size: 1.6rem;
     font-weight: 600;
@@ -86,7 +118,6 @@ main p {
     padding-bottom: 12px;
 }
 
-/* line accent accent under the category title */
 .category-title::after {
     content: '';
     position: absolute;
@@ -98,35 +129,30 @@ main p {
     background-color: #e88b88; 
 }
 
-/* Column grid for product cards */
 .product-grid {
     display: grid;
     width: 100%;
     max-width: 1100px; 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 30px; 
-    margin-bottom: 40px;
-    padding: 10px 0;
+    margin: 0 auto 40px auto;
+    padding: 10px 20px;
 }
 
-/* Product Cards with Hover Micro-interactions */
 .product-card {
     background: #ffffff;
     border-radius: 12px;
     padding: 16px;
     text-align: center;
     box-shadow: 0 4px 18px rgba(74, 59, 50, 0.04); 
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                box-shadow 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
 }
 
-/* Lifts cards up cleanly when the consumer's mouse hovers over it */
 .product-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 12px 24px rgba(74, 59, 50, 0.09);
 }
 
-/* Product Menu Images */
 .product-card img {
     width: 100%;
     height: 220px;
@@ -135,68 +161,70 @@ main p {
     margin-bottom: 15px;
 }
 
-/* Product Menu Titles */
-.product-card h3 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #3d2f26;
-    margin-bottom: 6px;
+.product-card-content {
+    padding: 10px 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-/* Product Menu Prices */
-.product-card p {
-    font-size: 1.05rem;
+.product-card-content h3 {
+    font-size: 1.15rem;
+    color: #3e2723;
+    margin: 0;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 20px;                   
+    margin-top: 10px;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #5c4033; 
+}
+
+.add-to-cart-btn {
+    background-color: #8b5a2b; 
+    color: #ffffff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-family: inherit;
     font-weight: 600;
-    color: #e88b88; 
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 5px 4px rgba(139, 90, 43, 0.15);
+    transition: all 0.2s ease-in-out;
 }
-footer {
-    background-color: #2b2521; 
-    color: #fff;
-    text-align: center;
-    padding: 45px 20px;
-    margin-top: 0; 
+
+.add-to-cart-btn:hover {
+    background-color: #5c4033; 
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(92, 64, 51, 0.25);
 }
-.footer-links {
-    margin-bottom: 15px;
-}
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    margin: 0 12px;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-}
-.footer-links a:hover {
-    opacity: 1;
-    color: #e88b88;
-}
-.footer-email {
-    font-size: 0.9rem;
-    opacity: 0.7;
-}
-.footer-email a {
-    color: #e88b88;
-    text-decoration: none;
-}
-.footer-email a:hover {
-    text-decoration: underline;
+
+.add-to-cart-btn:active {
+    transform: translateY(1px);
 }
 
 /* ==========================================================================
-   Munamii Cakery Premium Cart Integration Design System
+   Sliding Cart Drawer UI
    ========================================================================== */
-
-/* The Main Slide-out Panel Theme overrides */
 .cart-drawer {
     position: fixed;
     top: 0;
-    right: -450px; /* Hidden offscreen */
+    right: -450px; 
     width: 100%;
     max-width: 420px;
     height: 100vh;
-    background-color: #fdfaf7; /* Matches warm bakery soft-cream backdrop */
-    box-shadow: -8px 0 35px rgba(92, 64, 51, 0.15); /* Soft chocolate drop shadow */
+    background-color: #fdfaf7; 
+    box-shadow: -8px 0 35px rgba(92, 64, 51, 0.15); 
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -207,10 +235,9 @@ footer {
     right: 0;
 }
 
-/* Header Panel Design inside Cart */
 .cart-header {
     padding: 24px;
-    border-bottom: 1px solid #ebdcd0; /* Elegant light-brown divider line */
+    border-bottom: 1px solid #ebdcd0; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -220,7 +247,7 @@ footer {
 .cart-header h2 {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #3e2723; /* Dark gourmet chocolate */
+    color: #3e2723; 
     margin: 0;
 }
 
@@ -229,7 +256,7 @@ footer {
     border: none;
     font-size: 2.2rem;
     cursor: pointer;
-    color: #8b5a2b; /* Premium brown close marker */
+    color: #8b5a2b; 
     line-height: 1;
     transition: color 0.2s ease;
 }
@@ -238,14 +265,13 @@ footer {
     color: #3e2723;
 }
 
-/* Individual Product Rows inside Cart */
 .cart-item-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
     padding: 16px;
-    background-color: #ffffff; /* Creates distinct cards for items in the bag */
+    background-color: #ffffff; 
     border-radius: 12px;
     border: 1px solid #ebdcd0;
     box-shadow: 0 2px 6px rgba(92, 64, 51, 0.03);
@@ -264,7 +290,7 @@ footer {
 
 .cart-item-single-price {
     font-size: 0.85rem;
-    color: #8b5a2b; /* Warm milk chocolate subtitled text */
+    color: #8b5a2b; 
 }
 
 .cart-item-controls {
@@ -273,13 +299,12 @@ footer {
     gap: 12px;
 }
 
-/* Premium Plus/Minus Stepper Controls Styling */
 .quantity-stepper {
     display: flex;
     align-items: center;
     background-color: #fdfaf7;
     border: 1px solid #ebdcd0;
-    border-radius: 20px; /* Rounded pill style buttons */
+    border-radius: 20px; 
     overflow: hidden;
     padding: 2px;
 }
@@ -301,12 +326,32 @@ footer {
     color: #ffffff;
 }
 
-.stepper-value {
+.stepper-input {
+    width: 38px;
+    background: transparent;
+    border: none;
+    text-align: center;
     font-size: 0.95rem;
     font-weight: 700;
-    min-width: 24px;
-    text-align: center;
-    color: #3e2723;
+    color: #3e2723; 
+    font-family: inherit;
+    padding: 2px 0;
+}
+
+.stepper-input::-webkit-outer-spin-button,
+.stepper-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.stepper-input[type=number] {
+    -moz-appearance: textfield; 
+}
+
+.stepper-input:focus {
+    outline: none;
+    background-color: #f5eae1; 
+    border-radius: 4px;
 }
 
 .cart-item-total-price {
@@ -317,7 +362,6 @@ footer {
     text-align: right;
 }
 
-/* Trash Bin Reset */
 .delete-item-btn {
     background: none;
     border: none;
@@ -331,7 +375,6 @@ footer {
     transform: scale(1.15);
 }
 
-/* Footer & Calculations Panel Tweak */
 .cart-footer {
     padding: 24px;
     border-top: 1px solid #ebdcd0;
@@ -348,101 +391,9 @@ footer {
 }
 
 #cart-total-price {
-    color: #8b5a2b; /* Pricing highlight indicator */
+    color: #8b5a2b; 
 }
 
-/* Custom Backdrop Overlay Adjustment */
-.cart-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(62, 39, 35, 0.3); /* Soft warm translucent drop shadow barrier */
-    backdrop-filter: blur(5px); /* Soft focus background blur */
-    z-index: 999;
-    display: none;
-}
-
-.cart-overlay.open {
-    display: block;
-}
-/* ==========================================================================
-   Munamii Cakery Premium Brown E-Commerce Styles
-   ========================================================================== */
-
-/* 1. Header Navigation Bag Tweak */
-.cart-nav-link {
-    text-decoration: none;
-    color: #5c4033 !important; /* Deep warm brown text */
-    font-weight: 600;
-    margin-left: 20px;
-    padding: 6px 12px;
-    border-radius: 20px;
-    background-color: #fcf8f5; /* Ultra light cream background */
-    border: 1px solid #e8d8ce;
-    transition: all 0.2s ease;
-}
-.cart-nav-link:hover {
-    background-color: #5c4033;
-    color: #ffffff !important;
-}
-
-/* 2. Product Card Meta Layout Fixes */
-.product-card-content {
-    padding: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-.product-card-content h3 {
-    font-size: 1.15rem;
-    color: #3e2723; /* Very dark chocolate brown for headings */
-    margin: 0;
-}
-.product-meta {
-    display: flex;
-    justify-content: flex-start; /* Aligns both items to the left side together */
-    align-items: center;
-    gap: 20px;                   /* Controls the exact distance between price and button */
-    margin-top: 10px;
-}
-
-.price {
-    font-weight: 700;
-    font-size: 1.2rem;
-    color: #5c4033; /* Warm brown for prices */
-}
-
-/* 3. The New Beautiful Brown Add to Cart Button */
-.add-to-cart-btn {
-    background-color: #8b5a2b; /* Premium Milk Chocolate Brown */
-    color: #ffffff;
-    border: none;
-    padding: 5px 12px;
-    border-radius: 8px;
-    font-family: inherit;
-    font-weight: 600;
-    font-size: 0.85rem;
-    cursor: pointer;
-    box-shadow: 0 5px 4px rgba(139, 90, 43, 0.15);
-    transition: all 0.2s ease-in-out;
-}
-
-/* Button Hover State - Deepens to dark chocolate and lifts slightly */
-.add-to-cart-btn:hover {
-    background-color: #5c4033; /* Dark Roasted Chocolate Brown */
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(92, 64, 51, 0.25);
-}
-
-/* Button Active State - When clicked physically */
-.add-to-cart-btn:active {
-    transform: translateY(1px);
-}
-
-/* 4. Cart Drawer Checkout Button Theme Sync */
 .checkout-btn {
     width: 100%;
     background-color: #8b5a2b;
@@ -455,63 +406,921 @@ footer {
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
+
 .checkout-btn:hover {
     background-color: #5c4033;
 }
 
-/* Styling for the typed field input inside your stepper */
-.stepper-input {
-    width: 38px;
-    background: transparent;
-    border: none;
-    text-align: center;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #3e2723; /* Matching dark chocolate text */
-    font-family: inherit;
-    padding: 2px 0;
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(62, 39, 35, 0.3); 
+    backdrop-filter: blur(5px); 
+    z-index: 999;
+    display: none;
 }
 
-/* Removes default up/down arrows from input types inside the cart drawer */
-.stepper-input::-webkit-outer-spin-button,
-.stepper-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+.cart-overlay.open {
+    display: block;
+}
+
+/* ==========================================================================
+   Click-to-Expand Product Modal Info Boxes
+   ========================================================================== */
+.product-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.85); 
+    width: 90%;
+    max-width: 650px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(92, 64, 51, 0.25);
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.product-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1); 
+}
+
+.modal-content {
+    position: relative;
+    padding: 30px;
+}
+
+.modal-body-layout {
+    display: flex;
+    flex-direction: column; 
+    gap: 25px;
+}
+
+@media (min-width: 550px) {
+    .modal-body-layout {
+        flex-direction: row; 
+    }
+}
+
+.modal-left-img {
+    flex: 1;
+    max-width: 100%;
+}
+
+.modal-left-img img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #ebdcd0;
+}
+
+.modal-right-info {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.modal-right-info h2 {
+    font-size: 1.5rem;
+    color: #3e2723; 
+    margin: 0 0 6px 0;
+}
+
+.modal-price-tag {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #8b5a2b; 
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.modal-right-info h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #a1887f;
+    margin: 0 0 6px 0;
+}
+
+.modal-right-info p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #5c4033;
     margin: 0;
 }
 
-.stepper-input[type=number] {
-    -moz-appearance: textfield; /* Firefox support override */
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    font-weight: 300;
+    cursor: pointer;
+    color: #8b5a2b;
+    z-index: 10;
+    line-height: 1;
 }
 
-/* When the user highlights or clicks into the box, give it a soft hint */
-.stepper-input:focus {
-    outline: none;
-    background-color: #f5eae1; /* Subtle highlight tone background */
-    border-radius: 4px;
+.close-modal-btn:hover {
+    color: #3e2723;
 }
 
-header nav {
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(62, 39, 35, 0.4);
+    backdrop-filter: blur(6px);
+    z-index: 1999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ==========================================================================
+   Premium Homepage Hero Section Overhaul Layout
+   ========================================================================== */
+.hero-split-container {
     display: flex;
-    align-items: center; /* This forces perfect vertical centering for everything inside nav */
-    gap: 25px;           /* Controls the exact, even spacing between all links and the bag */
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: calc(80vh - 120px); 
 }
 
-/* Update your existing .cart-nav-link block to make sure it plays nice with flexbox */
-.cart-nav-link {
-    text-decoration: none;
-    color: #5c4033 !important;
-    font-weight: 600;
-    /* Remove any large margin-left that might be pushing it away unequally */
-    margin-left: 5px; 
-    padding: 7.5px 25px;
+@media (min-width: 850px) {
+    .hero-split-container {
+        flex-direction: row;
+        padding: 80px 2%;
+        gap: 60px;
+    }
+}
+
+.hero-left-content {
+    flex: 1;
+    text-align: left; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-tagline {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8b5a2b; 
+    background-color: #fdf5ee; 
+    padding: 6px 16px;
     border-radius: 20px;
-    background-color: #fcf8f5;
-    border: 1px solid #e8d8ce;
-    
-    /* Forces the cart emoji and text inside the button to align perfectly too */
-    display: inline-flex;
+    margin-bottom: 18px;
+    border: 1px solid #ebdcd0;
+}
+
+.hero-left-content h1 {
+    font-size: 2.8rem;
+    line-height: 1.15;
+    color: #3e2723; 
+    margin: 0 0 16px 0;
+    font-weight: 800;
+}
+
+@media (min-width: 1050px) {
+    .hero-left-content h1 {
+        font-size: 3.5rem; 
+    }
+}
+
+.hero-left-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #5c4033; 
+    margin: 0 0 32px 0;
+    max-width: 520px;
+}
+
+.hero-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.hero-btn-primary {
+    background-color: #8b5a2b; 
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(139, 90, 43, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.hero-btn-primary:hover {
+    background-color: #3e2723;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(62, 39, 35, 0.3);
+}
+
+.hero-btn-secondary {
+    background-color: transparent;
+    color: #8b5a2b;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: 2px solid #ebdcd0;
+    transition: all 0.2s ease-in-out;
+}
+
+.hero-btn-secondary:hover {
+    background-color: #fdf5ee;
+    border-color: #8b5a2b;
+    transform: translateY(-2px);
+}
+
+.hero-right-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 6px; 
-    
-    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+}
+
+.main-hero-img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 24px; 
+    border: 8px solid #ffffff; 
+    box-shadow: 0 20px 40px rgba(92, 64, 51, 0.12);
+}
+
+@media (min-width: 850px) {
+    .main-hero-img {
+        height: 460px;
+    }
+}
+
+.floating-review-badge {
+    position: absolute;
+    bottom: 25px;
+    left: -20px; 
+    background-color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(62, 39, 35, 0.08);
+    border: 1px solid #f2e7de;
+    text-align: left;
+    display: none; 
+}
+
+@media (min-width: 480px) {
+    .floating-review-badge {
+        display: block; 
+    }
+}
+
+.floating-review-badge .stars {
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.floating-review-badge p {
+    font-size: 0.85rem;
+    margin: 0;
+    color: #3e2723;
+}
+
+/* ==========================================================================
+   Premium About Story Section Overhaul Styles
+   ========================================================================== */
+.about-story-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 75vh;
+}
+
+@media (min-width: 850px) {
+    .about-story-container {
+        flex-direction: row;
+        padding: 80px 2%;
+        gap: 70px;
+    }
+}
+
+.about-story-left {
+    flex: 1.1;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-tagline {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8b5a2b; 
+    background-color: #fdf5ee; 
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    border: 1px solid #ebdcd0;
+}
+
+.about-story-left h1 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    color: #3e2723; 
+    margin: 0 0 20px 0;
+    font-weight: 800;
+}
+
+@media (min-width: 1050px) {
+    .about-story-left h1 {
+        font-size: 3rem;
+    }
+}
+
+.about-lead-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #8b5a2b; 
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.about-story-left p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #5c4033; 
+    margin: 0 0 24px 0;
+}
+
+.brand-milestones {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.milestone-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.milestone-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #8b5a2b;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px #fdf5ee; 
+}
+
+.milestone-info h4 {
+    font-size: 1.05rem;
+    color: #3e2723;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.milestone-info p {
+    font-size: 0.9rem;
+    color: #5c4033;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.about-story-right {
+    flex: 0.9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.about-image-frame {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+}
+
+.main-about-img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 24px;
+    border: 8px solid #ffffff;
+    box-shadow: 0 20px 40px rgba(92, 64, 51, 0.1);
+}
+
+@media (min-width: 850px) {
+    .main-about-img {
+        height: 500px;
+    }
+}
+
+.artisan-badge-card {
+    position: absolute;
+    top: 35px;
+    right: -20px; 
+    background-color: #ffffff;
+    padding: 16px 24px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(62, 39, 35, 0.08);
+    border: 1px solid #f2e7de;
+    max-width: 200px;
+    text-align: left;
+}
+
+.artisan-badge-card h5 {
+    font-size: 0.95rem;
+    color: #8b5a2b;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.artisan-badge-card p {
+    font-size: 0.85rem;
+    margin: 0;
+    color: #3e2723;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Footer Layout Settings
+   ========================================================================== */
+footer {
+    background-color: #2b2521; 
+    color: #fff;
+    text-align: center;
+    padding: 45px 20px;
+    margin-top: 0; 
+}
+
+.footer-links {
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 12px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: #e88b88;
+}
+
+.footer-email {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.footer-email a {
+    color: #e88b88;
+    text-decoration: none;
+}
+
+.footer-email a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Interactive Application Style Cake Builder Customizer Styles
+   ========================================================================== */
+
+.builder-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 5%;
+}
+
+.builder-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.builder-intro h1 {
+    font-size: 2.5rem;
+    color: #3e2723;
+    font-weight: 800;
+    margin-top: 15px;
+}
+
+/* Flex layout workspace setup split */
+.builder-workspace {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: stretch; /* Aligns columns to stretch fully, creating the scrolling runway */
+    width: 100%;
+}
+
+@media (min-width: 900px) {
+    .builder-workspace {
+        flex-direction: row;
+        align-items: flex-start; /* Crucial: Prevents the sidebar from stretching to full height so it can float */
+    }
+}
+
+/* Cards left container layout columns */
+.builder-steps-container {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.step-card-block {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #ebdcd0;
+    box-shadow: 0 4px 12px rgba(92, 64, 51, 0.02);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #f2e7de;
+    padding-bottom: 12px;
+}
+
+.step-number {
+    background-color: #8b5a2b;
+    color: #ffffff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.step-header h3 {
+    font-size: 1.25rem;
+    color: #3e2723;
+    font-weight: 700;
+}
+
+/* Individual card components options grid grids layout */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.option-card {
+    background-color: #fdfaf7;
+    border: 2px solid #ebdcd0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option-card:hover {
+    border-color: #8b5a2b;
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Interactive Chosen Selected State Class Indicator */
+.option-card.active {
+    background-color: #ffffff;
+    border-color: #8b5a2b;
+    box-shadow: 0 8px 20px rgba(139, 90, 43, 0.12);
+}
+
+.option-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.option-card h4 {
+    font-size: 1.05rem;
+    color: #3e2723;
+    margin: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.option-card p {
+    font-size: 0.85rem;
+    color: #6d5c52;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.option-price-tag {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #8b5a2b;
+    margin-top: auto; /* Pushes price text tag down uniformly */
+    background-color: #fcf8f5;
+    padding: 2px 10px;
+    border-radius: 12px;
+    border: 1px solid #e8d8ce;
+}
+
+.option-card.active .option-price-tag {
+    background-color: #8b5a2b;
+    color: #ffffff;
+    border-color: #8b5a2b;
+}
+
+/* Right Side Summary Sidebar Box Elements Panels */
+.builder-summary-sidebar {
+    flex: 0.8;
+    width: 100%;
+}
+
+.sticky-summary-box {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 30px; /* Keeps computational summary fixed on desktops during long page scrolling actions */
+    background-color: #ffffff;
+    border: 1px solid #ebdcd0;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 15px 35px rgba(92, 64, 51, 0.05);
+    text-align: left;
+}
+
+.sticky-summary-box h3 {
+    font-size: 1.3rem;
+    color: #3e2723;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    border-bottom: 1px solid #ebdcd0;
+    padding-bottom: 12px;
+}
+
+.summary-receipt {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.receipt-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.receipt-label {
+    font-size: 0.85rem;
+    color: #8b5a2b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.receipt-row strong {
+    font-size: 1rem;
+    color: #3e2723;
+}
+
+.summary-total {
+    border-top: 1px solid #ebdcd0;
+    padding-top: 18px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #3e2723;
+}
+
+#builder-total-price {
+    color: #8b5a2b;
+}
+
+.sidebar-disclaimer {
+    font-size: 0.8rem;
+    color: #8b5a2b;
+    opacity: 0.8;
+    margin-top: 12px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   Premium Interactive Testimonial Section & Grid Filters
+   ========================================================================== */
+.testimonials-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 5%;
+    background: transparent;
+}
+
+.testimonials-intro {
+    text-align: center;
+    margin-bottom: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonials-intro h2 {
+    font-size: 2.4rem;
+    color: #3e2723;
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.testimonials-intro p {
+    color: #5c4033;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+/* Custom Interactive Filter Tab Pill Selectors */
+.testimonial-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.filter-btn {
+    background-color: #fdfaf7;
+    border: 1px solid #ebdcd0;
+    color: #8b5a2b;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    border-color: #8b5a2b;
+    background-color: #ffffff;
+}
+
+.filter-btn.active {
+    background-color: #8b5a2b;
+    color: #ffffff;
+    border-color: #8b5a2b;
+    box-shadow: 0 4px 12px rgba(139, 90, 43, 0.15);
+}
+
+/* The Animated Display Asymmetric Grid Layout Setup */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border: 1px solid #ebdcd0;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(92, 64, 51, 0.02);
+    text-align: left;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Hover Micro-interaction lift */
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(92, 64, 51, 0.06);
+    border-color: #8b5a2b;
+}
+
+/* Classes utilized by JavaScript filtering for smooth disappear animations */
+.testimonial-card.hidden {
+    display: none;
+}
+
+.testimonial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.stars {
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+}
+
+.verified-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2e7d32; /* Soft luxury green assurance badge */
+    background-color: #e8f5e9;
+    padding: 4px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.testimonial-quote {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #5c4033;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+/* Author Profiler Split */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-top: 1px dashed #f2e7de;
+    padding-top: 16px;
+}
+
+.author-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.author-info h4 {
+    font-size: 1rem;
+    color: #3e2723;
+    margin: 0 0 2px 0;
+    font-weight: 700;
+}
+
+.author-info p {
+    font-size: 0.8rem;
+    color: #8b5a2b;
+    margin: 0;
+    font-weight: 500;
 }
