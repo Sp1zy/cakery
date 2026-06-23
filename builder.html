@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Cake Builder | Munamii Cakery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="images.jpeg" alt="Munamii Cakery logo" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+            <a href="builder.html" style="color: #e88b88; border-bottom: 2px solid #e88b88;">Cake Builder</a>
+            <a href="products.html" class="cart-nav-link">
+                🛒 Bag (<span class="cart-badge">0</span>)
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="builder-section">
+            <div class="builder-intro">
+                <span class="hero-tagline">✨ Custom Design Studio</span>
+                <h1>Design Your Dream Celebration Cake</h1>
+                <p>Select your options below to see a live visual configuration and pricing breakdown instantly.</p>
+            </div>
+
+            <div class="builder-workspace">
+                <!-- Left Side: Interactive Step-by-Step Selection Grid -->
+                <div class="builder-steps-container">
+                    
+                    <!-- Step 1: Tier Size selection -->
+                    <div class="step-card-block">
+                        <div class="step-header">
+                            <span class="step-number">1</span>
+                            <h3>Choose Cake Scale & Layers</h3>
+                        </div>
+                        <div class="options-grid">
+                            <div class="option-card active" data-type="size" data-value="1-Tier Petite" data-price="45">
+                                <span class="option-icon">🎂</span>
+                                <h4>1-Tier Petite</h4>
+                                <p>Serves 8-12 guests</p>
+                                <span class="option-price-tag">+€45.00</span>
+                            </div>
+                            <div class="option-card" data-type="size" data-value="2-Tier Celebration" data-price="85">
+                                <span class="option-icon">🎂✨</span>
+                                <h4>2-Tier Celebration</h4>
+                                <p>Serves 20-30 guests</p>
+                                <span class="option-price-tag">+€85.00</span>
+                            </div>
+                            <div class="option-card" data-type="size" data-value="3-Tier Grand Luxury" data-price="160">
+                                <span class="option-icon">🏰</span>
+                                <h4>3-Tier Grand Luxury</h4>
+                                <p>Serves 50-70 guests</p>
+                                <span class="option-price-tag">+€160.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Flavor Profile selection -->
+                    <div class="step-card-block">
+                        <div class="step-header">
+                            <span class="step-number">2</span>
+                            <h3>Select Gourmet Flavor Paste</h3>
+                        </div>
+                        <div class="options-grid">
+                            <div class="option-card active" data-type="flavor" data-value="Belgian Dark Chocolate" data-price="0">
+                                <span class="option-icon">🍫</span>
+                                <h4>Belgian Chocolate</h4>
+                                <p>Fudge sponge & ganache filling</p>
+                                <span class="option-price-tag">Included</span>
+                            </div>
+                            <div class="option-card" data-type="flavor" data-value="Madagascar Vanilla & Raspberry" data-price="5">
+                                <span class="option-icon">🍓</span>
+                                <h4>Madagascar Vanilla</h4>
+                                <p>Fresh raspberries & buttercream</p>
+                                <span class="option-price-tag">+€5.00</span>
+                            </div>
+                            <div class="option-card" data-type="flavor" data-value="Salted Caramel Praline" data-price="10">
+                                <span class="option-icon">🍯</span>
+                                <h4>Salted Caramel Praline</h4>
+                                <p>Toasted crunch crushed nuts</p>
+                                <span class="option-price-tag">+€10.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Frosting Styling/Theme Selection -->
+                    <div class="step-card-block">
+                        <div class="step-header">
+                            <span class="step-number">3</span>
+                            <h3>Design & Occasion Aesthetic</h3>
+                        </div>
+                        <div class="options-grid">
+                            <div class="option-card active" data-type="style" data-value="Minimalist Naked Style" data-price="0">
+                                <span class="option-icon">🌿</span>
+                                <h4>Rustic Naked Cake</h4>
+                                <p>Scraped icing with botanical greens</p>
+                                <span class="option-price-tag">Included</span>
+                            </div>
+                            <div class="option-card" data-type="style" data-value="Luxury Gold Leaf Shimmer" data-price="25">
+                                <span class="option-icon">👑</span>
+                                <h4>Luxury Gold Shimmer</h4>
+                                <p>Edible 24k gold leaf accents</p>
+                                <span class="option-price-tag">+€25.00</span>
+                            </div>
+                            <div class="option-card" data-type="style" data-value="Extravagant Floral Cascade" data-price="40">
+                                <span class="option-icon">🌸</span>
+                                <h4>Floral Cascade</h4>
+                                <p>Hand-sculpted organic fresh blooms</p>
+                                <span class="option-price-tag">+€40.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Side: Live Summary & Price Panel Tracker -->
+                <div class="builder-summary-sidebar">
+                    <div class="sticky-summary-box">
+                        <h3>Configuration Summary</h3>
+                        
+                        <div class="summary-receipt">
+                            <div class="receipt-row">
+                                <span class="receipt-label">Scale Base:</span>
+                                <strong id="summary-size">1-Tier Petite</strong>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Flavor Stack:</span>
+                                <strong id="summary-flavor">Belgian Dark Chocolate</strong>
+                            </div>
+                            <div class="receipt-row">
+                                <span class="receipt-label">Aesthetic Styling:</span>
+                                <strong id="summary-style">Minimalist Naked Style</strong>
+                            </div>
+                        </div>
+
+                        <div class="summary-total">
+                            <span>Estimated Total:</span>
+                            <span id="builder-total-price">€45.00</span>
+                        </div>
+
+                        <button id="book-custom-cake-btn" class="checkout-btn">Book Custom Design Setup</button>
+                        <p class="sidebar-disclaimer">Our master decorators will verify availability based on your chosen specifications upon submittal.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://instagram.com" target="_blank">Instagram</a> | 
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+        </div>
+        <div class="footer-email">
+            Contact us via email: <a href="mailto:info@munamiicakery.com">info@munamiicakery.com</a>
+        </div>
+    </footer>
+
+    <!-- Include JavaScript for interactive state logic computation -->
+    <script src="builder.js"></script>
+</body>
+</html>
